@@ -26,6 +26,8 @@ Route::get('/testGet', 'TestController@get');
 
 Route::get('/articlechanges', 'TestController@articleChanges');
 
+Route::get('/getuserdata', 'ArticleController@getUserData'); //only used for testing remove if used for production
+
 Route::post('/createarticle', 'ArticleController@createArticle');
 Route::post('/editarticle', 'ArticleController@editArticleSave');
 Route::post('/loadarticle', 'ArticleController@editArticleLoad');
@@ -35,7 +37,15 @@ Route::post('/deletearticle', 'ArticleController@deleteArticle');
 Route::post('/pushbackarticle', 'ArticleController@pushbackArticle');
 
 
+
 Route::get('/viewallarticles', 'ArticleController@viewAllArticles');
 Route::get('/viewallpendingarticles', 'ArticleController@viewAllPendingArticles');
 Route::get('/viewallpublishedarticles', 'ArticleController@viewAllPublishedArticles');
 Route::get('/viewallyourarticles', 'ArticleController@viewAllYourArticles');
+
+
+Route::post('/commentOnArticle', 'ArticleController@commentOnArticle');
+Route::post('/deleteComment', 'ArticleController@deleteComment');
+Route::post('/viewAllArticleComments', 'ArticleController@viewAllArticleComments');
+Route::post('/likeComment', 'ArticleController@likeComment');
+Route::post('/likeArticle', 'ArticleController@likeArticle');
